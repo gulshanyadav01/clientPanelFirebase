@@ -66,7 +66,7 @@ class Client extends Component {
     <td class=" border font-bold px-8 py-4">{client.firstName.toLocaleUpperCase()} {client.lastName.toLocaleUpperCase()}</td>
     <td class=" border font-bold px-8  py-4">{client.email}</td>
     <td class=" border font-bold px-8 py-4">{client.balance}</td>
-    <td><Link to = "/dashboard" className = "bg-gray-300 px-2 py-1 shadow rounded hover:bg-blue-600 hover:text-white hover: font-bold"><ArrowForwardIcon className = " w-1/2 h-1/2 text-black-500 bg-yellow-400 rounded-xl"/> Detail</Link></td>
+    <td><Link to = {`/client/detail/${client.id}`} className = "bg-gray-300 px-2 py-1 shadow rounded hover:bg-blue-600 hover:text-white hover: font-bold"><ArrowForwardIcon className = " w-1/2 h-1/2 text-black-500 bg-yellow-400 rounded-xl"/> Detail</Link></td>
     </tr>
               </>
           )
