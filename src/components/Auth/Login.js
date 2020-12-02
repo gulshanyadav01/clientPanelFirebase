@@ -1,6 +1,6 @@
 import React, {Component } from "react"; 
-import { compose } from "redux"; 
-import { connect } from "react-redux";
+// import { compose } from "redux"; 
+// import { connect } from "react-redux";
 import { firebaseConnect} from "react-redux-firebase";
 
 
@@ -18,17 +18,19 @@ class Login extends Component {
         e.preventDefault();
         const { email, password } = this.state;
         const { firebase } = this.props; 
+        console.log(this.state);
 
         firebase.login({
             email,
             password
         }).catch(err => alert("invalid login credentials"));
+        this.props.history.push("/");
     }
 
     render() {
         return (
             <div className = "w-52 rounded h-48 bg-blue-300 m-auto">
-                <form className = "mt-12 ml-2">
+                <form className = "mt-12 ml-2" onSubmit = {this.onSubmit}>
                     <label htmlFor = "email">Email</label>
                     <input
                         type = "email"
@@ -38,7 +40,7 @@ class Login extends Component {
                         />
                     <label htmlFor = "password">password</label>
                     <input 
-                        type = "text"
+                        type = "password"
                         name = "password"
                         value ={this.state.password}
                         onChange = {this.onChange}
