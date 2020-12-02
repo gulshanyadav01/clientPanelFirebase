@@ -10,7 +10,7 @@ class AppNavbar extends Component {
                 <nav>
                     <ul>
                         <li>
-                            <Link to ="/dashboard">
+                            <Link to ="/">
                                 dashboard
                             </Link>
                         </li>
