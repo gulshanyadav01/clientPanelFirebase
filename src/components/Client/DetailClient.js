@@ -74,7 +74,7 @@ class DetailClient extends Component {
                     <h1>back to dashboard</h1>
                     </div>
                     <div>
-                    <button className = " ml-10 mt-3  "><Link to ="/dashboard" className  = ' rounded-l shadow-xl  px-2 py-1 bg-blue-600 hover:shadow hover:bg-blue-700'>Edit</Link><button onClick = {this.onDeleteClick} className  = ' rounded-r shadow-xl  px-2 py-0.5 bg-red-600 hover:shadow hover:bg-red-800 hover:scale-100' >Delete</button></button>
+                    <button className = " ml-10 mt-3  "><Link to ="/client/edit/:id" className  = ' rounded-l shadow-xl  px-2 py-1 bg-blue-600 hover:shadow hover:bg-blue-700'>Edit</Link><button onClick = {this.onDeleteClick} className  = ' rounded-r shadow-xl  px-2 py-0.5 bg-red-600 hover:shadow hover:bg-red-800 hover:scale-100' >Delete</button></button>
                     </div>
                 </div>
                     <div className = "w-2/3 m-auto">

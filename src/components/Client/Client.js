@@ -50,7 +50,7 @@ class Client extends Component {
                 </div>
                 <div> 
                     
-<table class="shadow-lg   w-full">
+<table class="shadow-xl rounded   w-full">
   <tr>
     <th class="bg-blue-100 border  text-left px-8 py-4">NAME</th>
     <th class="bg-blue-100 border  text-left px-8 py-4">EMAIL</th>
