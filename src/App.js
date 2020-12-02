@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import Dashboard from "./components/Layout/Dashboard"
 import store from "./Store/Store"
 import { Provider } from "react-redux"; 
+import AddClient from "./components/Client/AddClient"
 
 class App extends Component {
   render() {
@@ -12,9 +13,10 @@ class App extends Component {
       <Router>
       <div>
         <AppNavbar/>
-        <div className  = "">
+        <div>
         <Switch>
           <Route exact path = "/" component = {Dashboard}/>
+          <Route exact path = "/client/add" component = {AddClient}/>
         </Switch>
         </div>
       </div>
