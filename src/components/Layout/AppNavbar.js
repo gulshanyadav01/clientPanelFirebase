@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import { compose } from "redux"; 
 import { connect } from "react-redux"; 
 import HomeIcon from '@material-ui/icons/Home';
+import BuildIcon from '@material-ui/icons/Build';
 
 
 
@@ -49,10 +50,12 @@ class AppNavbar extends Component {
                             </li>
                         </ul>
                     ): null}
-                    {isAuthenticated? (
-                        <Link to = "/setting"  className = "px-4 py-1 ml-32 font-bold bg-red-400 rounded shadow-lg hover:bg-red-600">
-                            Setting
-                        </Link>
+                    {isAuthenticated ? (
+                        <ul className = "mr-2 ml-2 font-bold underline">
+                            <li>
+                               <Link to ="/setting">  <BuildIcon/>  </Link>
+                            </li>
+                        </ul>
                     ): null}
 
                     {isAuthenticated? (
