@@ -1,8 +1,9 @@
 import React, {Component } from "react"; 
-// import { compose } from "redux"; 
-// import { connect } from "react-redux";
+import { compose } from "redux"; 
+import { connect } from "react-redux";
 import { firebaseConnect} from "react-redux-firebase";
-
+import { notifyUser} from "../../Actions/NotifyActions"
+import Alert from "../Layout/Alert";
 
 class Login extends Component {
     state = {
@@ -17,20 +18,28 @@ class Login extends Component {
     onSubmit = (e) => { 
         e.preventDefault();
         const { email, password } = this.state;
-        const { firebase } = this.props; 
+        const { firebase, notifyUser } = this.props; 
         console.log(this.state);
 
         firebase.login({
             email,
             password
-        }).catch(err => alert("invalid login credentials"));
+        }).catch(err => this.props.notifyUser("invalid login credentials", "error"));
         this.props.history.push("/");
     }
 
     render() {
+        const { message, messageType } = this.props;
         return (
             <div className = "w-52 rounded h-48 bg-blue-300 m-auto">
+            
+
                 <form className = "mt-12 ml-2" onSubmit = {this.onSubmit}>
+                {message ? (
+                <Alert message = {message}
+                messageType = {messageType}
+                />
+            ): null}
                     <label htmlFor = "email">Email</label>
                     <input
                         type = "email"
@@ -53,4 +62,10 @@ class Login extends Component {
 }
 
 
-export default firebaseConnect()(Login);
+export default compose(
+    firebaseConnect(),
+    connect((state, props ) => ({
+        notify: state.notify
+
+    }),{ notifyUser})
+)(Login);

@@ -4,6 +4,13 @@ import 'firebase/firestore';
 import { reactReduxFirebase, firebaseReducer } from 'react-redux-firebase';
 import { reduxFirestore, firestoreReducer } from 'redux-firestore';
 
+// reducers
+
+import NotifyReducer from "../Reducers/NotifyReducer"
+
+
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyCQH1kZa0Oifttsmbqwu9vxDgbSI6RfS7g",
     authDomain: "clientpanel-c0b87.firebaseapp.com",
@@ -18,7 +25,9 @@ const firebaseConfig = {
 // react-redux-firebase config
 const rrfConfig = {
   userProfile: 'users',
-  useFirestoreForProfile: true // Firestore for Profile instead of Realtime DB
+  useFirestoreForProfile: true
+
+   // Firestore for Profile instead of Realtime DB
 };
 
 // Init firebase instance
@@ -36,7 +45,8 @@ const createStoreWithFirebase = compose(
 
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
-  firestore: firestoreReducer
+  firestore: firestoreReducer,
+  nofity: NotifyReducer
 });
 
 // Create initial state
