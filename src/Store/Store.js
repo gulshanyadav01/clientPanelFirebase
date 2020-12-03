@@ -48,13 +48,13 @@ const rootReducer = combineReducers({
   firebase: firebaseReducer,
   firestore: firestoreReducer,
   nofity: NotifyReducer,
-  setting:SettingReducer
+  settings:SettingReducer
 });
 
 
 // check for setting in local storage 
 
-if(localStorage.getItem("setting") == null){
+if(localStorage.getItem("settings") == null){
   // default setting 
   const defaultSetting = {
 

@@ -9,7 +9,7 @@ export const setDisableBalanceOnAdd = () => {
     const settings = JSON.parse(localStorage.getItem("settings"));
 
     // toggle 
-    settings.disableBalanceOnAdd = ! settings.disableBalanceOnAdd;
+    settings.disableBalanceOnAdd = !settings.disableBalanceOnAdd;
 
     // set back to local storage 
 
@@ -26,7 +26,7 @@ export const setDisableBalanceOnEdit = () => {
      const settings = JSON.parse(localStorage.getItem("settings"));
 
      // toggle 
-     settings.disableBalanceOnEdit = ! settings.disableBalanceOnEdit;
+     settings.disableBalanceOnEdit = !settings.disableBalanceOnEdit;
  
      // set back to local storage 
     return {
@@ -42,7 +42,7 @@ export const setAllowRegistration = () => {
      const settings = JSON.parse(localStorage.getItem("settings"));
 
      // toggle 
-     settings.allowRegistration = ! settings.allowRegistration;
+     settings.allowRegistration = !settings.allowRegistration;
  
      // set back to local storage 
     return {
