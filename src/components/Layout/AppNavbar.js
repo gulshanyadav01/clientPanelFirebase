@@ -27,7 +27,7 @@ class AppNavbar extends Component {
         const { firebase } = this.props; 
         firebase.logout();
     }
-        
+
     render() {
         const { isAuthenticated} = this.state;
         return (
@@ -49,6 +49,12 @@ class AppNavbar extends Component {
                             </li>
                         </ul>
                     ): null}
+                    {isAuthenticated? (
+                        <Link to = "/setting"  className = "px-4 py-1 ml-32 font-bold bg-red-400 rounded shadow-lg hover:bg-red-600">
+                            Setting
+                        </Link>
+                    ): null}
+
                     {isAuthenticated? (
                         <Link to = "#" onClick = {this.onLogoutClick} className = "px-4 py-1 ml-32 font-bold bg-red-400 rounded shadow-lg hover:bg-red-600">
                             logout

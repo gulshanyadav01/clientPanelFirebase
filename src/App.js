@@ -9,7 +9,7 @@ import DetailClient from "./components/Client/DetailClient";
 import EditClient from "./components/Client/EditClient";
 import { UserIsAuthenticated, UserIsNotAuthenticated} from "./Helpers/Auth"
 import Login from "./components/Auth/Login"
-
+import Settings from "./components/Setting/Setting"
 
 class App extends Component {
   render() {
@@ -25,6 +25,7 @@ class App extends Component {
           <Route exact path = "/client/detail/:id" component = {UserIsAuthenticated(DetailClient)}/>
           <Route exact path = "/client/edit/:id" component = {UserIsAuthenticated(EditClient)}/>
           <Route exact path = "/login" component = {UserIsNotAuthenticated(Login)}/>
+          <Route exact path = "/setting" component = {UserIsAuthenticated(Settings)}/>
         </Switch>
         </div>
       </div>
